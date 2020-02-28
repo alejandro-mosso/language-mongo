@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    networks:
+      - lognet
+
+  app:
+   build:
+     context: .
+   ports:
+     - 9211:9211
+   volumes:
+     - ./app/target:/app
+   depends_on:
+     - mongo
+   entrypoint: "java -jar /app/app-0.0.1-SNAPSHOT.jar"
+   networks: 
+     - lognet 
+
+networks:
+  lognet:

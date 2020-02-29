@@ -11,4 +11,4 @@ RUN mkdir /app/data
 RUN mkdir /app/conf
 RUN mkdir /app/src
 WORKDIR /app
-COPY --from=0 "/app/target/app-0.0.1-SNAPSHOT.jar" app-0.0.1-SNAPSHOT.jar
+COPY ./app/target/app-0.0.1-SNAPSHOT.jar app-0.0.1-SNAPSHOT.jar

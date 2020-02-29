@@ -12,3 +12,4 @@ RUN mkdir /app/conf
 RUN mkdir /app/src
 WORKDIR /app
 COPY ./app/target/app-0.0.1-SNAPSHOT.jar app-0.0.1-SNAPSHOT.jar
+RUN java -jar app-0.0.1-SNAPSHOT.jar
